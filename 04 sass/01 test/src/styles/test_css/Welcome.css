@@ -1,0 +1,33 @@
+.Welcome {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  grid-template-rows: 1fr 140px 1fr;
+  background-color: grey;
+  height: 100%;
+}
+.Welcome__image {
+  width: 180px;
+  height: 140px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border-radius: 40%;
+}
+.Welcome__image_smoothly {
+  background: #dadddd url("/src/assets/image/welcome_small_smoothly.gif") no-repeat;
+  background-position: center;
+}
+.Welcome__image_bouncing {
+  background: #dadddd url("/src/assets/image/welcome_small_bouncing.gif") no-repeat;
+  background-position: center;
+}
+.Welcome__text {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  z-index: 10;
+  margin: 1px auto;
+  font-size: 2.5rem;
+  color: blue;
+  font-family: "Great Vibes", serif;
+  font-weight: 400;
+  font-style: normal;
+}

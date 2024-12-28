@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+$ArrowLeftBeforeBorder: 20px;
+$ArrowLeftBeforeLeft: 20px;
+
+.ArrowLeft {
+    padding-left: 80px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: calc(50% - $ArrowLeftBeforeBorder);
+        left: $ArrowLeftBeforeLeft;
+        width: 0;
+        height: 0;
+        border: $ArrowLeftBeforeBorder solid $SentenceItem__header-color;
+        border-color: transparent $SentenceItem__header-color transparent
+            transparent;
+        cursor: pointer;
+    }
+}

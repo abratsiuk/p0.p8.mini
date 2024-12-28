@@ -1,0 +1,15 @@
+.ArrowRight {
+  padding-right: 100px;
+  position: relative;
+}
+.ArrowRight::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 20px);
+  right: 0px;
+  width: 0;
+  height: 0;
+  border: 20px solid navy;
+  border-color: transparent transparent transparent navy;
+  cursor: pointer;
+}

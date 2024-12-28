@@ -1,0 +1,9 @@
+.Main {
+  height: calc(100vh - 7rem - 5rem);
+  background-color: #dadddd;
+}
+
+.Main_scrollable {
+  min-height: calc(100vh - 7rem - 5rem);
+  background-color: #dadddd;
+}

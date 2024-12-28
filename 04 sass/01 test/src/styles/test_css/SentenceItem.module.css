@@ -1,0 +1,59 @@
+.SentenceItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+.SentenceItem__imageArrow {
+  width: 50%;
+  max-width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.SentenceItem__quoteArrow {
+  width: 50%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem 1rem;
+  position: relative;
+}
+.SentenceItem__quote {
+  max-width: 63rem;
+  line-height: 4rem;
+  margin: 0 auto;
+}
+.SentenceItem__header {
+  position: relative;
+  color: navy;
+  font-family: "Great Vibes", serif;
+  font-size: 3.5rem;
+}
+.SentenceItem__text {
+  white-space: pre-line;
+  text-indent: 2rem;
+}
+.SentenceItem__text_speech {
+  text-indent: 0rem;
+}
+.SentenceItem__text_reflection {
+  text-indent: 0rem;
+}
+.SentenceItem__text_headered {
+  max-width: 60rem;
+  padding-left: 3rem;
+  text-indent: 2rem;
+}
+.SentenceItem__text_headered::first-letter {
+  color: navy;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 150%;
+}
+.SentenceItem__footer {
+  text-align: right;
+  color: grey;
+}

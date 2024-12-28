@@ -1,0 +1,10 @@
+@import './variables.scss';
+
+.BookUazdao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 60rem;
+    margin: 0 auto;
+}

@@ -1,0 +1,27 @@
+.footer {
+  height: 5rem;
+  background-color: #c2c9c9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.footer__copyright {
+  position: relative;
+  height: 5rem;
+  line-height: 2.5rem;
+}
+.footer__image_bouncing {
+  padding-left: 90px;
+}
+.footer__image_bouncing::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  width: 80px;
+  height: 5rem;
+  background: #dadddd url("/src/assets/image/welcome_small_gump.gif") no-repeat;
+  background-position: center;
+  background-size: 90%;
+}

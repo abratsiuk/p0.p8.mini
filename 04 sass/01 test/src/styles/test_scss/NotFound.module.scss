@@ -1,0 +1,56 @@
+@import './variables.scss';
+
+.NotFound {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__image {
+        height: 100%;
+        flex-grow: 1;
+        background-image: url('src/assets/image/book/p62.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: right;
+        &_mirror {
+            transform: scaleX(-1);
+        }
+    }
+    &__text {
+        position: absolute;
+        top: calc(50% - 9rem);
+        height: 7rem;
+        width: 30rem;
+        line-height: 7rem;
+        text-align: center;
+        font-size: 5rem;
+        border-radius: 1rem;
+        background-color: $Welcome-background-color;
+        box-shadow: $Welcome-background-color 0 0 3rem 1rem;
+        color: #fff;
+        &_small {
+            font-size: 2rem;
+            line-height: 2rem;
+            position: absolute;
+            top: calc(50%);
+        }
+    }
+}
+/*
+TO DO: check it
+
+.notfound__text {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+*/

@@ -1,0 +1,198 @@
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/*https://fonts.google.com/::after
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+*/
+
+/* Site Logo: */
+.great-vibes-regular {
+    font-family: 'Great Vibes', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* headers and UI: */
+.merriweather-light {
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.merriweather-regular {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.merriweather-bold {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.merriweather-black {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.merriweather-light-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.merriweather-regular-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.merriweather-bold-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.merriweather-black-italic {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* text wor reading: */
+
+.roboto-thin {
+    font-family: 'Roboto', serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.roboto-light {
+    font-family: 'Roboto', serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.roboto-regular {
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium {
+    font-family: 'Roboto', serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-bold {
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.roboto-black {
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.roboto-thin-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.roboto-light-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.roboto-regular-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.roboto-medium-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.roboto-bold-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.roboto-black-italic {
+    font-family: 'Roboto', serif;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/*for debug*/
+.p4-red {
+    border: 5px solid red;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px red;
+}
+
+.p4-blue {
+    border: 5px solid blue;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px blue;
+}
+
+.p4-green {
+    border: 5px solid green;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px green;
+}
