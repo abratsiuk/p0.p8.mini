@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+$ArrowRightBeforeBorder: 20px;
+$ArrowRightBeforeRight: 0px;
+
+.ArrowRight {
+    padding-right: 100px;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - $ArrowRightBeforeBorder);
+        right: $ArrowRightBeforeRight;
+        width: 0;
+        height: 0;
+        border: $ArrowRightBeforeBorder solid $SentenceItem__header-color;
+        border-color: transparent transparent transparent
+            $SentenceItem__header-color;
+        cursor: pointer;
+    }
+}

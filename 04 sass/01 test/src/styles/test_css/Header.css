@@ -1,0 +1,25 @@
+.Header {
+  height: 7rem;
+  background-color: #c2c9c9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header__logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 5rem;
+  text-decoration: none;
+  color: #2626bf;
+  padding: 0 2rem;
+}
+.Header__menu {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.Header__menuItem {
+  margin-right: 2rem;
+}
+.Header__menuItem:last-of-type {
+  margin-right: 0rem;
+}

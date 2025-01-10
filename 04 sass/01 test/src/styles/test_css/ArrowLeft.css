@@ -1,0 +1,15 @@
+.ArrowLeft {
+  padding-left: 80px;
+  position: relative;
+}
+.ArrowLeft::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 20px;
+  width: 0;
+  height: 0;
+  border: 20px solid navy;
+  border-color: transparent navy transparent transparent;
+  cursor: pointer;
+}
