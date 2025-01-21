@@ -5,9 +5,9 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"02-todos-18---02@workspace:.":
+"02.todos.18_02@workspace:.":
   version: 0.0.0-use.local
-  resolution: "02-todos-18---02@workspace:."
+  resolution: "02.todos.18_02@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.17.0"
     "@types/react": "npm:^18.3.18"
