@@ -1,12 +1,16 @@
 import { createStore } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
+import './App.css';
 
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 
-let maxId = 0;
+export const addTodo = (text) => ({ type: ADD_TODO, text });
+export const toggleTodo = (id) => ({ type: TOGGLE_TODO, id });
+export const deleteTodo = (id) => ({ type: DELETE_TODO, id });
+export const updateTodo = (id, text) => ({ type: UPDATE_TODO, id, text });
 
 const persistTodos = [{ id: -100, text: 'text -100', completed: false }];
 const initialState = { todos: persistTodos };
@@ -19,21 +23,52 @@ const todos = (state = initialState, action) => {
                 todos: [
                     ...state.todos,
                     {
-                        id: ++maxId,
+                        id: Date.now(),
                         text: action.text,
                         completed: false,
                     },
                 ],
             };
+        case TOGGLE_TODO:
+            return {
+                ...state,
+                todos: state.todos.map((todo) => {
+                    if (todo.id !== action.id) {
+                        return todo;
+                    } else {
+                        return { ...todo, completed: !todo.completed };
+                    }
+                }),
+            };
+        case UPDATE_TODO:
+            return {
+                ...state,
+                todos: state.todos.map((todo) => {
+                    if (todo.id !== action.id) {
+                        return todo;
+                    } else {
+                        return { ...todo, text: action.text };
+                    }
+                }),
+            };
+        case DELETE_TODO:
+            return {
+                ...state,
+                todos: state.todos.filter((todo) => todo.id !== action.id),
+            };
         default:
             return state;
     }
 };
-export const store = createStore(todos);
+export const store = createStore(
+    todos,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const App = () => {
     return (
-        <div>
+        <div className="App">
+            <h1>todos</h1>
             <NewTodo />
             <Todos />
         </div>
@@ -42,9 +77,28 @@ const App = () => {
 export default App;
 
 export const Todo = ({ id, text, completed }) => {
+    const dispatch = useDispatch();
     return (
         <div>
-            {id} {text} {completed}
+            <input
+                type="checkbox"
+                name="completed"
+                id={`completed_${id}`}
+                checked={completed}
+                onChange={() => dispatch(toggleTodo(id))}
+            />
+            <input
+                type="text"
+                name="text"
+                id={`text_${id}`}
+                value={text}
+                onChange={(e) => dispatch(updateTodo(id, e.target.value))}
+            />
+            <input
+                type="button"
+                value="x"
+                onClick={() => dispatch(deleteTodo(id))}
+            />
         </div>
     );
 };
@@ -67,5 +121,28 @@ export const Todos = () => {
 };
 
 export const NewTodo = () => {
-    return <div>NewTodo</div>;
+    const dispatch = useDispatch();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const text = event.target.text.value;
+        dispatch(addTodo(text));
+        event.target.reset();
+    };
+
+    return (
+        <div className="NewTodo">
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="text"
+                    id="text"
+                />
+                <input
+                    type="submit"
+                    value="add new"
+                />
+            </form>
+        </div>
+    );
 };

@@ -13,6 +13,24 @@ yarn
 
 yarn dev
 
+
+---------------
+Redux DevTools
+https://github.com/reduxjs/redux-devtools/tree/main/extension#installation
+![](_md_img/flow_images/flow%202025-01-22-16-37-45.png)
+
+2-й или 3-й параметр
+
+```
+ const store = createStore(
+   reducer, /* preloadedState, */
++  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+ );
+```
+
+https://monsterlessons.com/project/lessons/reduxjs-redux-devtools
+
+![](_md_img/flow_images/flow%202025-01-22-16-27-40.png)
+![](_md_img/flow_images/flow%202025-01-22-16-33-58.png)
+
 -----------------
-git config --global core.autocrlf input
-В этом случае Git сохранит окончания строк в формате LF, независимо от операционной системы.
