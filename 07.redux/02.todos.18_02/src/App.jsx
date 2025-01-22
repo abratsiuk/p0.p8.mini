@@ -2,7 +2,7 @@ import './App.css';
 import { Todos } from './components/Todos';
 import { NewTodo } from './components/NewTodo';
 
-const App = () => {
+export const App = () => {
     return (
         <div className="App">
             <h1>todos</h1>
@@ -11,4 +11,3 @@ const App = () => {
         </div>
     );
 };
-export default App;
