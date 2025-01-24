@@ -13,6 +13,10 @@ yarn add @redux-devtools/extension
 
 yarn add lodash
 
+yarn add react-router-dom@^6.0.0
+yarn up react-router-dom@^6.0.0
+yarn add react-router-dom@^6.28.2
+
 yarn
 
 yarn dev
@@ -55,4 +59,4 @@ https://monsterlessons.com/project/lessons/reduxjs-redux-devtools
 ![](_md_img/flow_images/flow%202025-01-22-16-27-40.png)
 ![](_md_img/flow_images/flow%202025-01-22-16-33-58.png)
 
------------------
+-----------------yarn upgrade react-router-dom@^6.0.0

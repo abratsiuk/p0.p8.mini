@@ -1,42 +1,45 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectFilter } from '../store/filters/filters_selectors';
-import { filter } from '../store/filters/filters_actions';
 import { all, active, completed } from '../store/filters/filters_const';
+import { Link, useParams } from 'react-router-dom';
 
 export const Filter = () => {
-    const activeFilter = useSelector(selectFilter);
-    const dispatch = useDispatch();
+    const { filter: activeFilter } = useParams();
 
     return (
-        <ul
+        <div
             style={{
                 display: 'flex',
                 justifyContent: 'center',
-                listStyle: 'none',
                 gap: '10px',
             }}
         >
-            <li
-                style={{ color: activeFilter === all ? 'red' : 'black' }}
-                onClick={() => dispatch(filter(all))}
+            <Link
+                to={`/${all}`}
+                style={{
+                    textDecoration: 'none',
+                    color: activeFilter === all ? 'red' : 'black',
+                }}
             >
                 {all}
-            </li>
-            <li
-                style={{ color: activeFilter === active ? 'red' : 'black' }}
-                onClick={() => dispatch(filter(active))}
+            </Link>
+            <Link
+                to={`/${active}`}
+                style={{
+                    textDecoration: 'none',
+                    color: activeFilter === active ? 'red' : 'black',
+                }}
             >
                 {active}
-            </li>
-            <li
+            </Link>
+            <Link
+                to={`/${completed}`}
                 style={{
+                    textDecoration: 'none',
                     color: activeFilter === completed ? 'red' : 'black',
                 }}
-                onClick={() => dispatch(filter(completed))}
             >
                 {completed}
-            </li>
-        </ul>
+            </Link>
+        </div>
     );
 };

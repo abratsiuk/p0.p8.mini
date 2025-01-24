@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 import { selectVisibleTodos } from '../store/todos/todos_selectors';
-import { selectFilter } from '../store/filters/filters_selectors';
 import { Todo } from './Todo';
+import { useParams } from 'react-router-dom';
 
 export const Todos = () => {
-    const activeFilter = useSelector(selectFilter);
+    const { filter: activeFilter } = useParams();
     const todos = useSelector((state) =>
         selectVisibleTodos(state, activeFilter)
     );
