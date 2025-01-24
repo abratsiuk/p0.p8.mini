@@ -1,4 +1,3 @@
-import React from 'react';
 import { all, active, completed } from '../store/filters_const';
 import { Link, useParams } from 'react-router-dom';
 
