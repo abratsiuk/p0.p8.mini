@@ -1,12 +1,13 @@
+import { all, active, completed } from '../filters_const';
 export const selectAllTodos = (state) => state.todos;
 
 export const selectVisibleTodos = (state, filter) => {
     switch (filter) {
-        case 'all':
+        case all:
             return state.todos;
-        case 'completed':
+        case completed:
             return state.todos.filter((todo) => todo.completed);
-        case 'active':
+        case active:
             return state.todos.filter((todo) => !todo.completed);
         default:
             return state.todos;

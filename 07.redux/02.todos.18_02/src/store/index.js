@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 import { devToolsEnhancer } from '@redux-devtools/extension';
 import { rootReducer } from './root_reducer';
 import { loadData, saveData } from './localstorage';
-import { all } from './filters/filters_const';
+import { all } from './filters_const';
 import throttle from 'lodash/throttle';
 
 export const configureStore = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { all, active, completed } from '../store/filters/filters_const';
+import { all, active, completed } from '../store/filters_const';
 import { Link, useParams } from 'react-router-dom';
 
 export const Filter = () => {
-    const { filter: activeFilter } = useParams();
+    const { filter: activeFilter = all } = useParams();
 
     return (
         <div
