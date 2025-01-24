@@ -1,8 +1,6 @@
 import { ADD_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO } from './todos_const';
 
-const persistTodos = [{ id: 1, text: 'text 1', completed: false }];
-
-export const todos = (state = persistTodos, action) => {
+export const todos = (state = [], action) => {
     switch (action.type) {
         case ADD_TODO:
             return [

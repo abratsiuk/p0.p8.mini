@@ -11,6 +11,8 @@ yarn add react-redux
 
 yarn add @redux-devtools/extension
 
+yarn add lodash
+
 yarn
 
 yarn dev

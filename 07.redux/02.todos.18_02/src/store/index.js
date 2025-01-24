@@ -3,6 +3,7 @@ import { devToolsEnhancer } from '@redux-devtools/extension';
 import { rootReducer } from './root_reducer';
 import { loadData, saveData } from './localstorage';
 import { all } from './filters/filters_const';
+import throttle from 'lodash/throttle';
 
 export const configureStore = () => {
     const persistedTodos = loadData();
@@ -12,9 +13,11 @@ export const configureStore = () => {
         devToolsEnhancer()
     );
 
-    store.subscribe(() => {
-        saveData(store.getState()?.todos);
-    });
+    store.subscribe(
+        throttle(() => {
+            saveData(store.getState()?.todos);
+        }, 1000)
+    );
 
     return store;
 };
