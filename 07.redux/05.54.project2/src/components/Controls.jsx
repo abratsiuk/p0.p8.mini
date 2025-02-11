@@ -29,10 +29,10 @@ const Wrapper = styled.div`
 
 export const Controls = () => {
     const region = useSelector(selectRegion);
+    console.log(region);
     const dispatch = useDispatch();
 
     const handleSelect = (reg) => {
-        console.log('handleSelect');
         dispatch(setRegion(reg?.value || ''));
     };
 
@@ -44,7 +44,7 @@ export const Controls = () => {
                 placeholder="Filter by Region"
                 isClearable
                 isSearchable={false}
-                value={optionsMap[region]}
+                value={region ? optionsMap[region] : null}
                 onChange={handleSelect}
             />
         </Wrapper>
