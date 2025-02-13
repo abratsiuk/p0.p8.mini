@@ -1,5 +1,5 @@
 import { about } from './about.js';
-import './styles/index.css';
+import './styles/index.scss';
 
 console.log('hello from index.js');
 
