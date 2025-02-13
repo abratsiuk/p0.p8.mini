@@ -1,37 +1,33 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackMerge = require('webpack-merge');
+const mergeConfig = (mode) => require(`./builder/webpack.${mode}.js`)();
 
 module.exports = ({ mode }) => {
-    return {
-        mode: mode,
-        entry: './src/index.js',
-        output: { filename: 'main.js', path: path.resolve('./build') },
-        module: {
-            rules: [
-                {
-                    test: /\.scss$/,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        'css-loader',
-                        'sass-loader',
-                    ],
-                },
-                {
-                    test: /\.js/,
-                    use: [
-                        {
-                            loader: 'babel-loader',
-                            options: { presets: ['@babel/preset-env'] },
-                        },
-                    ],
-                    exclude: /node_modules/,
-                },
-            ],
+    return WebpackMerge(
+        {
+            mode: mode,
+            entry: './src/index.js',
+            output: { filename: 'main.js', path: path.resolve('./build') },
+            module: {
+                rules: [
+                    {
+                        test: /\.js/,
+                        use: [
+                            {
+                                loader: 'babel-loader',
+                                options: { presets: ['@babel/preset-env'] },
+                            },
+                        ],
+                        exclude: /node_modules/,
+                    },
+                ],
+            },
+            plugins: [new HtmlWebpackPlugin()],
+            devServer: {
+                contentBase: './build',
+            },
         },
-        plugins: [new HtmlWebpackPlugin(), new MiniCssExtractPlugin()],
-        devServer: {
-            contentBase: './build',
-        },
-    };
+        mergeConfig(mode)
+    );
 };
