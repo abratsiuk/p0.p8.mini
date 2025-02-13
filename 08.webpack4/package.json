@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env.mode development --open"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.10.3"
   }
 }
