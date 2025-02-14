@@ -3,12 +3,14 @@ import {
     SET_ERROR,
     SET_COUNTRY,
     CLEAR_DETAILS,
+    SET_NEIGHBORS,
 } from './details-actions';
 
 const initialState = {
     currentCountry: null,
     status: 'idle',
     error: null,
+    neighbors: [],
 };
 export const detailsReducer = (state = initialState, { type, payload }) => {
     switch (type) {
@@ -35,6 +37,8 @@ export const detailsReducer = (state = initialState, { type, payload }) => {
             };
         case CLEAR_DETAILS:
             return initialState;
+        case SET_NEIGHBORS:
+            return { ...state, neighbors: payload };
         default:
             return state;
     }
