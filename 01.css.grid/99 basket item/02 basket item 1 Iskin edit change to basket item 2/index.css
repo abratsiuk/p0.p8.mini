@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+    margin: auto;
+    max-width: 80rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2rem 10rem 1fr 5rem;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cell {
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+.index {
+    text-align: right;
+    padding: 0.5rem;
+}
+
+.image {
+    text-align: center;
+    width: 10rem;
+    height: 10rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    height: 100%;
+}
+
+.qty {
+    display: grid;
+    grid-template-columns: 3rem 4rem 3rem;
+    margin: auto
+}
+
+.value {
+    text-align: right;
+    padding-right: 1rem;
+    ;
+}
+
+.number {
+    text-align: right;
+    font-weight: bold;
+}
