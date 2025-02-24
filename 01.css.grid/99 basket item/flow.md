@@ -7,4 +7,4 @@ basket item 2.xlsx
 
 result:
 
-![](_md_img/flow_images/flow%202025-02-24-14-04-51.png)
+![](_md_img/flow_images/flow%202025-02-24-14-40-05.png)
