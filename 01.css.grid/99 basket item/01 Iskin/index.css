@@ -1,0 +1,37 @@
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 10rem auto 5rem;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cell {
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+.image {
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+}
+
+.number {
+    text-align: right;
+    font-weight: bold;
+}
