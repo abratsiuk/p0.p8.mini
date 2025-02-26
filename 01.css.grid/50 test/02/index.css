@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 10rem 10rem 10rem minmax(10rem, 1fr);
+    grid-template-rows: 10rem;
+    gap: 1rem;
+}
+
+.cell {
+    border: 1px solid black;
+
+}
