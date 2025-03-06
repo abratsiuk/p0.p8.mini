@@ -1,0 +1,44 @@
+.GoodItem {
+    width: 250px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+    display: inline-block;
+}
+
+.GoodItem img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.GoodItem__name {
+    font-weight: bold;
+}
+
+.GoodItem__displayType {
+    font-weight: bold;
+}
+
+.GoodItem__description {}
+
+.GoodItem__rarity {}
+
+.GoodItem__banner {}
+
+.GoodItem__price {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.GoodItem__action button {
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

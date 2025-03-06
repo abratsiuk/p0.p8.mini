@@ -1,0 +1,16 @@
+.Main {
+    /* padding: 2rem;
+    padding-left: 330px; */
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    justify-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+.Filter {
+    width: 330px;
+    height: 80vh;
+    border: 1px solid gray;
+}

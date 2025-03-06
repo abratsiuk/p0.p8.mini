@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods List</title>
+    <style>
+        .GoodItem {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 250px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+
+        .GoodItem img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .GoodItem__title {
+            font-weight: bold;
+        }
+
+        .GoodItem__price {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .GoodItem__action button {
+            padding: 5px 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="goods-container">
+        <script>
+            const goods = [
+                {
+                    "background": "https://media.fortniteapi.io/images/shop/97dc2f82568324103d1a49e608b33c1a6b14543b7cf223517323f422871c729b/v2/MI_0/background.png",
+                    "name": "Space Gear Bundle",
+                    "displayType": "Item Bundle",
+                    "mainType": "bundle",
+                    "description": "",
+                    "rarity": { "name": "UNCOMMON" },
+                    "banner": { "name": "800 V-Bucks Off" },
+                    "priority": -1,
+                    "price": 2300
+                },
+                {
+                    "background": "https://media.fortniteapi.io/images/shop/b56bdf69b88248706fb943ab6d8fc8479d044a399f477e394064ea90da16eeb8/v2/MI_0/background.png",
+                    "name": "Ripley & Xenomorph Bundle",
+                    "displayType": "Item Bundle",
+                    "mainType": "bundle",
+                    "description": "",
+                    "rarity": { "name": "Epic" },
+                    "banner": { "name": "900 V-Bucks Off" },
+                    "priority": -1,
+                    "price": 3100
+                }
+            ];
+
+            const container = document.getElementById("goods-container");
+
+            goods.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "GoodItem";
+                div.innerHTML = `
+                    <img src="${item.background}" alt="${item.name}">
+                    <div class="GoodItem__title">${item.name}</div>
+                    <div><strong>${item.displayType}</strong>${item.displayType.toLowerCase() !== item.mainType.toLowerCase() ? ` (${item.mainType})` : ''}</div>
+                    <div>${item.description || ''}</div>
+                    ${item.rarity?.name ? `<div>Rarity: ${item.rarity.name}</div>` : ''}
+                    ${item.banner?.name ? `<div>Banner: ${item.banner.name}</div>` : ''}
+                    <div class="GoodItem__price">${item.price} V-Bucks</div>
+                    <div class="GoodItem__action">
+                        <button onclick="alert('Added ${item.name} to cart')">Add to Cart</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        </script>
+    </div>
+</body>
+
+</html>

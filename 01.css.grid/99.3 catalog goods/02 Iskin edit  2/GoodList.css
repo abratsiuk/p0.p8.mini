@@ -1,0 +1,10 @@
+.GoodList {
+    .GoodsList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+        justify-items: stretch;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+}
