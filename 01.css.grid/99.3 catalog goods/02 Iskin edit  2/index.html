@@ -14,7 +14,7 @@
 <body>
     <div class="Main">
         <div class="Filter"></div>
-        <div id="GoodList">
+        <div id="goodlist_container" class="GoodList">
             <script>
                 const goods = [
                     {
@@ -162,7 +162,7 @@
                     }
                 ];
 
-                const container = document.getElementById("GoodList");
+                const container = document.getElementById("goodlist_container");
 
                 goods.forEach(item => {
                     const div = document.createElement("div");

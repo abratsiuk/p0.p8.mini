@@ -1,7 +1,7 @@
 .GoodItem {
-
-    max-width: 350px;
-    min-width: 250px;
+    width: 100%;
+    /* max-width: 350px;
+    min-width: 250px; */
     background: #f9f9f9;
     border: 1px solid #ddd;
     padding: 10px;
