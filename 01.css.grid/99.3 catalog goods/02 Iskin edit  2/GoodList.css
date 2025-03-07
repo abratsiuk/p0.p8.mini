@@ -7,10 +7,32 @@
     /* background-color: lightgreen; */
 }
 
-/* Минимум 4 колонки на больших экранах */
-@media (min-width: 1200px) {
+
+
+@media (max-width: 1199.98px) {
     .GoodList {
-        /* background-color: aqua; */
-        grid-template-columns: repeat(4, 1fr);
+        background-color: rgb(0, 255, 255);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991.98px) {
+    .GoodList {
+        background-color: rgba(63, 228, 228, 0.562);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .GoodList {
+        background-color: rgba(76, 175, 175, 0.562);
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .GoodList {
+        background-color: rgba(61, 83, 83, 0.562);
+        grid-template-columns: repeat(1, 1fr);
     }
 }
