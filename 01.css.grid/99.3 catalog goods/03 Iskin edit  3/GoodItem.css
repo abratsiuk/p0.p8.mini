@@ -1,0 +1,113 @@
+.GoodItem {
+    width: 100%;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.GoodItem:hover {
+    position: relative;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.GoodItem__top {
+    width: 100%;
+    position: relative;
+}
+
+.GoodItem__banner {
+    display: inline;
+    padding: 0 0.5rem;
+    color: silver;
+    border: 1px solid lightcoral;
+    box-shadow: 4px 4px 5px lightcoral;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.GoodItem__image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.GoodItem__rarity {
+    display: inline;
+    padding: 0 2rem;
+    border: 1px solid rgba(128, 240, 234, 0.5);
+    box-shadow: 4px 4px 5px rgba(128, 240, 234, 0.5);
+    border-radius: 10px;
+    background-color: rgba(255, 235, 205, 0.5);
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+}
+
+.GoodItem__content {
+    flex-grow: 1;
+}
+
+.GoodItem__name {
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.GoodItem__displayType {
+    font-weight: bold;
+}
+
+.GoodItem__description {}
+
+
+
+.GoodItem__action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.GoodItem__price {
+    color: red;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: gold 0px 0px 2px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .button{
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+} */
+
+.GoodItem__addToCart {
+    width: 30px;
+    height: 30px;
+    background: url('basket_mini_red.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    margin-right: 2rem;
+}

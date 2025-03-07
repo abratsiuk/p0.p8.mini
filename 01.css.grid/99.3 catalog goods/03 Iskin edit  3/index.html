@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goods List 03 Iskin edit 3</title>
+    <link rel="stylesheet" href="myNormalize.css">
+    <link rel="stylesheet" href="Main.css">
+    <link rel="stylesheet" href="GoodItem.css">
+    <link rel="stylesheet" href="GoodList.css">
+</head>
+
+<body>
+    <div class="Main">
+        <div class="Filter"></div>
+        <div id="goodlist_container" class="GoodList">
+            <script>
+                const goods = [
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/97dc2f82568324103d1a49e608b33c1a6b14543b7cf223517323f422871c729b/v2/MI_0/background.png",
+                        "name": "Space Gear Bundle",
+                        "displayType": "Item Bundle",
+                        "mainType": "bundle",
+                        "description": "",
+                        "rarity": {
+                            "id": "Uncommon",
+                            "name": "UNCOMMON"
+                        },
+                        "series": null,
+                        "banner": {
+                            "id": "vbucksoff",
+                            "name": "800 V-Bucks Off",
+                            "intensity": "Low"
+                        },
+                        "priority": -1,
+                        "price": 2300
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/b56bdf69b88248706fb943ab6d8fc8479d044a399f477e394064ea90da16eeb8/v2/MI_0/background.png",
+                        "name": "Ripley & Xenomorph Bundle",
+                        "displayType": "Item Bundle",
+                        "mainType": "bundle",
+                        "description": "",
+                        "rarity": {
+                            "id": "Epic",
+                            "name": "Epic"
+                        },
+                        "series": null,
+                        "banner": {
+                            "id": "vbucksoff",
+                            "name": "900 V-Bucks Off",
+                            "intensity": "Low"
+                        },
+                        "priority": -1,
+                        "price": 3100
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/eaa21bfc06852c13289a08fdb25e1b7cc4d60ff210aebd8356fa660df06f8ff9/v2/MI_0/background.png",
+                        "name": "Burst Case Scenario",
+                        "displayType": "Emote",
+                        "mainType": "emote",
+                        "description": "That's some serious indigestion.",
+                        "rarity": {
+                            "id": "Uncommon",
+                            "name": "UNCOMMON"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -2,
+                        "price": 300
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/72bba71693760f695398b1cfd05a6c3b269298cb8ad9150b82788a60ece016bf/v2/MI_0/background.png",
+                        "name": "Xenomorph",
+                        "displayType": "Outfit",
+                        "mainType": "outfit",
+                        "description": "If you see it coming, it's already too late.",
+                        "rarity": {
+                            "id": "Epic",
+                            "name": "Epic"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -2,
+                        "price": 1600
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/c2da74e41d91dec607e2f3073fbd45b47fc8c554bbaa916f46501cf628f7eb26/v2/MI_0/background.png",
+                        "name": "Cheyenne Dropship",
+                        "displayType": "Glider",
+                        "mainType": "glider",
+                        "description": "In the pipe, five by five.",
+                        "rarity": {
+                            "id": "Epic",
+                            "name": "Epic"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -3,
+                        "price": 1200
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/9f614f032deed4fb3ec7e00aef5cc32e076554019296622bed7d54b944e84cb9/v2/MI_0/background.png",
+                        "name": "Ellen Ripley",
+                        "displayType": "Outfit",
+                        "mainType": "outfit",
+                        "description": "Last survivor of the Nostromo.",
+                        "rarity": {
+                            "id": "Epic",
+                            "name": "Epic"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -3,
+                        "price": 1500
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/c30a53385e00c82ac0e3065ac6b1ea0dcb640562bfdabd6e5ce7c05f89bdc998/v2/MI_0/background.png",
+                        "name": "P-5000 Power Loader Arm",
+                        "displayType": "Pickaxes",
+                        "mainType": "pickaxe",
+                        "description": "Requires a Class-2 rating or higher.",
+                        "rarity": {
+                            "id": "Rare",
+                            "name": "RARE"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -4,
+                        "price": 800
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/5f57e251dd07b83c8f12d55027203cd8a929b6e2b4f16a00e3a96baa6c9ae692/v2/MI_0/background.png",
+                        "name": "Astral Eye",
+                        "displayType": "Item Bundle",
+                        "mainType": "sparks_guitar",
+                        "description": "A shimmering transcendent harbinger of tone.",
+                        "rarity": {
+                            "id": "Rare",
+                            "name": "RARE"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -1,
+                        "price": 800
+                    },
+                    {
+                        "background": "https://media.fortniteapi.io/images/shop/28ed35eec33e532325e0b635e01808af99b1398bd57e07ea781b391e75311899/v2/MI_0/background.png",
+                        "name": "Big Lug",
+                        "displayType": "Item Bundle",
+                        "mainType": "sparks_bass",
+                        "description": "Just try to wrench this one away.",
+                        "rarity": {
+                            "id": "Rare",
+                            "name": "RARE"
+                        },
+                        "series": null,
+                        "banner": null,
+                        "priority": -2,
+                        "price": 800
+                    }
+                ];
+
+                const container = document.getElementById("goodlist_container");
+
+                goods.forEach(item => {
+                    const div = document.createElement("div");
+                    div.className = "GoodItem";
+                    div.innerHTML = `
+                    <div class="GoodItem__top">
+                        ${item.banner?.name ? `<div class="GoodItem__banner">${item.banner.name}</div>` : ''}
+                        <img 
+                            class="GoodItem__image" src="${item.background}" alt="${item.name}"
+                            onclick="alert('Go to the details for ${item.name}')"/>
+                        ${item.rarity?.name ? `<div class="GoodItem__rarity">Rarity: ${item.rarity.name}</div>` : ''}    
+                     </div>   
+                    <div
+                        class="GoodItem__content"
+                        onclick="alert('Go to the details for ${item.name}')"
+                    >
+                        <div class="GoodItem__name">${item.name}</div>
+                        <div class="GoodItem__type"><span class="GoodItem__displayType">${item.displayType}</span>${item.displayType.toLowerCase() !== item.mainType.toLowerCase() ? ` (${item.mainType})` : ''}</div>
+                        <div  class="GoodItem__description">${item.description || ''}</div>                       
+                       
+                    </div>
+
+                    
+                    <div class="GoodItem__action">
+                        <div class="GoodItem__price">${item.price}</div>
+                        <button class="GoodItem__addToCart" onclick="alert('Added ${item.name} to cart')"></button>
+                    </div>
+                `;
+                    container.appendChild(div);
+                });
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
