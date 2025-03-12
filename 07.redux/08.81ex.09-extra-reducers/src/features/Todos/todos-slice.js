@@ -30,35 +30,6 @@ export const createTodo = createAsyncThunk(
     }
 );
 
-export const toggleTodo = createAsyncThunk(
-    '@@todos/toggle-todo',
-    async ({ id, completed }) => {
-        const res = await fetch(`http://localhost:3001/todos/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ completed }),
-        });
-        const data = await res.json();
-
-        return data;
-    }
-);
-
-export const removeTodo = createAsyncThunk(
-    '@@todos/delete-todo',
-    async (id) => {
-        await fetch(`http://localhost:3001/todos/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-        return id;
-    }
-);
-
 const todoSlice = createSlice({
     name: '@@todos',
     initialState: {
@@ -66,7 +37,17 @@ const todoSlice = createSlice({
         loading: 'idle', // 'loading',
         error: null,
     },
-    reducers: {},
+    reducers: {
+        removeTodo: (state, action) => {
+            const id = action.payload;
+            return state.filter((todo) => todo.id !== id);
+        },
+        toggleTodo: (state, action) => {
+            const id = action.payload;
+            const todo = state.find((todo) => todo.id === id);
+            todo.completed = !todo.completed;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(resetToDefault, () => {
@@ -99,41 +80,10 @@ const todoSlice = createSlice({
             })
             .addCase(createTodo.fulfilled, (state, action) => {
                 state.entities.push(action.payload);
-            })
-
-            .addCase(toggleTodo.pending, (state, action) => {
-                state.loading = 'loading';
-                state.error = null;
-            })
-            .addCase(toggleTodo.rejected, (state) => {
-                state.loading = 'idle';
-                state.error = 'Something went wrong!';
-            })
-            .addCase(toggleTodo.fulfilled, (state, action) => {
-                const id = action.payload.id;
-                const todo = state.entities.find((todo) => todo.id === id);
-                todo.completed = action.payload.completed;
-            })
-
-            .addCase(removeTodo.pending, (state, action) => {
-                state.loading = 'loading';
-                state.error = null;
-            })
-            .addCase(removeTodo.rejected, (state) => {
-                state.loading = 'idle';
-                state.error = 'Something went wrong!';
-            })
-            .addCase(removeTodo.fulfilled, (state, action) => {
-                const id = action.payload;
-                return {
-                    entities: state.entities.filter((todo) => todo.id !== id),
-                    loading: 'idle',
-                    error: null,
-                };
             });
     },
 });
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
 
 export const todoReducer = todoSlice.reducer;
 

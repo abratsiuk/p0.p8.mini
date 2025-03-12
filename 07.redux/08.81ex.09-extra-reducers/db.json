@@ -13,7 +13,7 @@
     {
       "id": 3,
       "title": "Learn English",
-      "completed": true
+      "completed": false
     },
     {
       "id": 4,
@@ -23,7 +23,7 @@
     {
       "id": 5,
       "title": "Something new",
-      "completed": true
+      "completed": false
     },
     {
       "title": "asdasd",
@@ -39,6 +39,11 @@
       "title": "asdasd",
       "completed": false,
       "id": 8
+    },
+    {
+      "title": "t123",
+      "completed": false,
+      "id": 9
     }
   ]
 }
