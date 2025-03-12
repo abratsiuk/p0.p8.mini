@@ -26,7 +26,14 @@ export const TodoList = () => {
                     <input
                         type="checkbox"
                         checked={todo.completed}
-                        onChange={() => dispatch(toggleTodo(todo.id))}
+                        onChange={() =>
+                            dispatch(
+                                toggleTodo({
+                                    id: todo.id,
+                                    completed: !todo.completed,
+                                })
+                            )
+                        }
                     />{' '}
                     {todo.title}{' '}
                     <button onClick={() => dispatch(removeTodo(todo.id))}>
