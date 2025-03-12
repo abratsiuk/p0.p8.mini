@@ -7,6 +7,7 @@ export const loadTodos = createAsyncThunk('@@todos/load-todos', async () => {
     const data = await res.json();
     return data;
 });
+
 export const createTodo = createAsyncThunk(
     '@@todos/create-todo',
     async (title) => {
@@ -16,6 +17,24 @@ export const createTodo = createAsyncThunk(
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ title, completed: false }),
+        });
+        const data = await res.json();
+
+        return data;
+    }
+);
+export const toggleTodo = createAsyncThunk(
+    '@@todos/toggle-todo',
+    async (id, { getState }) => {
+        const todo = getState().todos.entities.find((todo) => todo.id === id);
+        const res = await fetch('http://localhost:3001/todos/' + id, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                completed: !todo.completed,
+            }),
         });
         const data = await res.json();
 
@@ -34,11 +53,6 @@ const todoSlice = createSlice({
         removeTodo: (state, action) => {
             const id = action.payload;
             return state.filter((todo) => todo.id !== id);
-        },
-        toggleTodo: (state, action) => {
-            const id = action.payload;
-            const todo = state.find((todo) => todo.id === id);
-            todo.completed = !todo.completed;
         },
     },
     extraReducers: (builder) => {
@@ -59,10 +73,17 @@ const todoSlice = createSlice({
             })
             .addCase(createTodo.fulfilled, (state, action) => {
                 state.entities.push(action.payload);
+            })
+            .addCase(toggleTodo.fulfilled, (state, action) => {
+                const id = action.payload.id;
+                const index = state.entities.findIndex(
+                    (todo) => todo.id === id
+                );
+                state.entities[index] = action.payload;
             });
     },
 });
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
+export const { removeTodo } = todoSlice.actions;
 
 export const todoReducer = todoSlice.reducer;
 
