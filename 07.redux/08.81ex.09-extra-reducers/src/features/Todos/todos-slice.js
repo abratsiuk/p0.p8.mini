@@ -41,6 +41,20 @@ export const toggleTodo = createAsyncThunk(
         return data;
     }
 );
+export const removeTodo = createAsyncThunk(
+    '@@todos/remove-todo',
+    async (id) => {
+        const res = await fetch('http://localhost:3001/todos/' + id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        await res.json();
+
+        return id;
+    }
+);
 
 const todoSlice = createSlice({
     name: '@@todos',
@@ -49,12 +63,7 @@ const todoSlice = createSlice({
         loading: 'idle', // 'loading',
         error: null,
     },
-    reducers: {
-        removeTodo: (state, action) => {
-            const id = action.payload;
-            return state.filter((todo) => todo.id !== id);
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
         builder
             .addCase(resetToDefault, () => {
@@ -80,10 +89,15 @@ const todoSlice = createSlice({
                     (todo) => todo.id === id
                 );
                 state.entities[index] = action.payload;
+            })
+            .addCase(removeTodo.fulfilled, (state, action) => {
+                const id = action.payload;
+                state.entities = state.entities.filter(
+                    (todo) => todo.id !== id
+                );
             });
     },
 });
-export const { removeTodo } = todoSlice.actions;
 
 export const todoReducer = todoSlice.reducer;
 
