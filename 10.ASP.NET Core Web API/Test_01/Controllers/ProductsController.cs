@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Test_01.Data;
 using Test_01.Models;
 
 namespace Test_01.Controllers
 {
+    [Authorize] // Только с токеном!
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
