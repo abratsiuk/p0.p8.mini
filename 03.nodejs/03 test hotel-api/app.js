@@ -16,3 +16,10 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Сервер запущен на порту ${PORT}`);
 });
+
+const mongoose = require('mongoose');
+
+mongoose
+    .connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB подключена'))
+    .catch((err) => console.error(err));
