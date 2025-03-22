@@ -23,3 +23,16 @@ mongoose
     .connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB подключена'))
     .catch((err) => console.error(err));
+
+const Booking = require('./models/Booking');
+
+app.post('/api/bookings', async (req, res) => {
+    const booking = new Booking(req.body);
+    await booking.save();
+    res.status(201).json(booking);
+});
+
+app.get('/api/bookings', async (req, res) => {
+    const bookings = await Booking.find();
+    res.json(bookings);
+});

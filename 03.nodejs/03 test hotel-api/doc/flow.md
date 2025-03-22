@@ -1,6 +1,6 @@
-
+## flow Iskin.md
 -----------
-mangoDB
+mongoDB
 
 registered as
 bracyuk@gmail.com
@@ -16,3 +16,8 @@ mongodb+srv://hotelBooking:<db_password>@hotelbooking.vbjcb.mongodb.net/?retryWr
 
 hotelBooking
 JhCpZbAwcl01VE1e
+
+------------------
+npm start
+
+![](_md_img/flow_images/flow%202025-03-22-13-26-20.png)
