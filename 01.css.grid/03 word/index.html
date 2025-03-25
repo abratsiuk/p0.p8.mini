@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for print</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+    </div>
+    <script>
+        const el = document.getElementsByClassName('container')[0];
+        for (let i = 1; i <= 18; i++) {
+            const img = document.createElement('img');
+            img.src = `/images/${i}.jpg`;
+            img.alt = `Image ${i}`;
+            img.className = 'item';
+            el.appendChild(img);
+        }
+    </script>
+</body>
+
+</html>
