@@ -1,0 +1,90 @@
+.logo {
+    background-image: url("./shop.svg");
+    background-size: contain;
+    width: var(--logo-size);
+    height: var(--logo-size);
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.burger {
+    position: relative;
+    width: 2.5rem;
+    height: .3rem;
+    background: #fff;
+    border-radius: 2px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.burger::before,
+.burger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: .3rem;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform .3s ease;
+}
+
+.burger::before {
+    top: -.7rem;
+}
+
+.burger::after {
+    top: .7rem;
+}
+
+.burger.active {
+    background: transparent;
+}
+
+.burger.active::before {
+    transform: translateY(.7rem) rotate(45deg);
+}
+
+.burger.active::after {
+    transform: translateY(-.7rem) rotate(-45deg);
+}
+
+.cart {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--header__logo-color);
+    border-radius: 50%;
+    background-image: url("basket.svg");
+    background-size: contain;
+}
+
+.search {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search__text {
+    width: 100%;
+    padding: .5rem 2.5rem .5rem .8rem;
+
+}
+
+.search__clear {
+    position: absolute;
+    top: 50%;
+    right: .5rem;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity .2s;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.search__clear:hover {
+    opacity: 1;
+}
