@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+:root {
+    --header-height: 8rem;
+    --header__logo-font-size: 5rem;
+    --footer-height: 5rem;
+    --basket__image-size: 12rem;
+    --color_transition: color 0.2s ease-out;
+    --header__logo-color: #ff5a5a;
+    --header__logo-color-dark: #db3d3d;
+    --header-color: #c2c9c9;
+    --main-color: #dadddd;
+    --link_active-color: #1f1f81;
+}
