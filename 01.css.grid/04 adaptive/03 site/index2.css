@@ -50,6 +50,7 @@
 }
 
 .cart {
+    position: relative;
     flex-grow: 0;
     flex-shrink: 0;
     width: 3.5rem;
@@ -58,6 +59,36 @@
     border-radius: 50%;
     background-image: url("basket.svg");
     background-size: contain;
+}
+
+.BasketQty {
+    position: absolute;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0.3rem;
+    right: -0.7rem;
+    top: -0.7rem;
+    background-color: #00a046;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BasketAmount {
+    position: absolute;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0.3rem;
+    right: -0.7rem;
+    bottom: -0.7rem;
+    background-color: gold;
+    color: var(--header__logo-color-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search {
@@ -87,4 +118,55 @@
 
 .search__clear:hover {
     opacity: 1;
+}
+
+.funds {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("funds.svg");
+    background-size: contain;
+}
+
+.FundsSymbol__container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.FundsSymbol__amount {
+    color: var(--header__logo-color-dark);
+    height: 3rem;
+    text-shadow: 3px 3px 5px gold;
+}
+
+.orders {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("orders.svg");
+    background-size: contain;
+}
+
+.OrdersSymbol__amount {
+    color: white;
+    height: 3rem;
+    text-shadow: 3px 3px 5px lightseagreen;
+}
+
+.filters {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.filters__sign {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("filter_full.svg");
+    background-size: contain;
 }
