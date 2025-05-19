@@ -1,0 +1,1 @@
+export { TemplateFC } from './TemplateFC';
